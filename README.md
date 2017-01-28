@@ -17,6 +17,7 @@ The library comes with text samples used for training and detecting text in 106 
 - [bestResults()](#bestresults)
 - [limit()](#limit)
 - [close()](#close)
+- [validate()](#validate)
 - [\_\_toString()](#__tostring)
 - [Method Chaining](#method-chaining)
 - [JsonSerializable](#jsonserializable)
@@ -163,6 +164,7 @@ Array
 
 ## validate()
 > **Experimental**: Returns true if we can detect the language and false if we can not detect the language.
+
 ```php
 $ld->detect('xyz')->validate();
 ```
