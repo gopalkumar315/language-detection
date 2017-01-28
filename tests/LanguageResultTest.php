@@ -117,6 +117,14 @@ class LanguageResultTest extends \PHPUnit_Framework_TestCase
         unset($result['NaN']);
     }
 
+    public function testValidate()
+    {
+        $l = new Language;
+
+        $this->assertFalse($l->detect('Das ist ein Test.')->validate());
+        $this->assertTrue($l->detect('Nem beszélek magyarul?')->validate());
+    }
+
     /**
      * @return array
      */

@@ -161,6 +161,16 @@ Array
 )
 ```
 
+## validate()
+> **Experimental**: Returns true if we can detect the language and false if we can not detect the language.
+```php
+$ld->detect('xyz')->validate();
+```
+Result:
+```text
+false
+```
+
 ## __toString()
 Returns the top entrie of the result. Note the `echo` at the beginning.
 ```php

@@ -111,13 +111,26 @@ class LanguageResult implements \JsonSerializable, \IteratorAggregate, \ArrayAcc
     }
 
     /**
+     * @return bool
+     */
+    public function validate()
+    {
+        $values = array_values($this->result);
+
+        $first = $values[0] ?? 0;
+        $second = $values[1] ?? 0;
+
+        return ($first - $second) > self::THRESHOLD;
+    }
+
+    /**
      * @return LanguageResult
      */
     public function bestResults(): LanguageResult
     {
         $first = array_values($this->result)[0];
 
-        return new LanguageResult(array_filter($this->result, function ($value) use (&$first) {
+        return new LanguageResult(array_filter($this->result, function ($value) use ($first) {
             return ($first - $value) <= self::THRESHOLD ? true : false;
         }));
     }
