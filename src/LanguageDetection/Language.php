@@ -17,18 +17,25 @@ class Language extends NgramParser
      */
     private $tokens = [];
 
+    /**
+     * Language constructor
+     *
+     * @param array $lang
+     */
     public function __construct(array $lang = [])
     {
-        $filename = __DIR__ . '/../../etc/_langs.json';
+        $isEmpty = empty($lang);
 
-        if (file_exists($filename))
+        /**
+         * @var \GlobIterator $json
+         */
+        foreach (new \GlobIterator(__DIR__ . '/../../etc/*.json') as $json)
         {
-            $this->tokens = json_decode(file_get_contents($filename), true);
-        }
-
-        if (!empty($lang))
-        {
-            $this->tokens = array_intersect_key($this->tokens, array_flip($lang));
+            if ($isEmpty || in_array($json->getBasename('.json'), $lang))
+            {
+                $content = file_get_contents($json->getPathname());
+                $this->tokens = array_merge($this->tokens, json_decode($content, true));
+            }
         }
     }
 
@@ -47,24 +54,26 @@ class Language extends NgramParser
         foreach ($this->tokens as $lang => $value)
         {
             $index = $sum = 0;
+            $value = array_flip($value);
 
-            foreach ($samples as $k => $v)
+            foreach ($samples as $v)
             {
-                if (!in_array($v, $value))
+                if (isset($value[$v]))
                 {
-                    $sum += $this->maxNgrams;
-                    $index++;
+                    $x = $index++ - $value[$v];
+                    $y = $x >> (PHP_INT_SIZE * 8);
+                    $sum += ($x + $y) ^ $y;
                     continue;
                 }
 
-                $sum += abs($index - array_search($v, $value));
-                $index++;
+                $sum += $this->maxNgrams;
+                ++$index;
             }
 
             $result[$lang] = 1 - ($sum / ($this->maxNgrams * $index));
         }
 
-        arsort($result);
+        arsort($result, SORT_NUMERIC);
 
         return new LanguageResult($result);
     }

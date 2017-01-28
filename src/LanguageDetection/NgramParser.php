@@ -25,7 +25,7 @@ abstract class NgramParser
     /**
      * @var int
      */
-    protected $maxNgrams = 300;
+    protected $maxNgrams = 310;
 
     /**
      * @param int $minLength
@@ -76,7 +76,7 @@ abstract class NgramParser
     private function tokenize(string $str)
     {
         return array_map(function ($word) {
-                return '_' . $word . '_';
+                return "_{$word}_";
             },
             preg_split('/[^\pL]+(?<![\x27\x60\x{2019}])/u', $str, -1, PREG_SPLIT_NO_EMPTY)
         );
@@ -96,30 +96,32 @@ abstract class NgramParser
 
             for ($i = $this->minLength; $i <= $this->maxLength; $i++)
             {
-                for ($j = 0; ($i + $j - 1) < $l; ++$j)
+                for ($j = 0; ($i + $j - 1) < $l; ++$j, ++$tmp)
                 {
-                    $tokens[$i][] = mb_substr($word, $j, $i);
+                    $tmp = &$tokens[$i][mb_substr($word, $j, $i)];
                 }
             }
         }
 
-        foreach ($tokens as &$ngram)
+        foreach ($tokens as $i => $token)
         {
-            $ngram = array_count_values($ngram);
+            $sum = array_sum($token);
 
-            $sum = array_sum($ngram);
-
-            $ngram = array_map(function ($number) use (&$sum) {
-                return $number / $sum;
-            }, $ngram);
+            foreach ($token as $j => $value)
+            {
+                $tmp = $value / $sum;
+            }
         }
 
         $tokens = array_merge(...$tokens);
-
         unset($tokens['_']);
 
-        arsort($tokens);
+        arsort($tokens, SORT_NUMERIC);
 
-        return array_slice(array_keys($tokens), 0, $this->maxNgrams);
+        return array_slice(
+            array_keys($tokens),
+            0,
+            $this->maxNgrams
+        );
     }
 }

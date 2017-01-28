@@ -22,9 +22,9 @@ class TrainerTest extends \PHPUnit_Framework_TestCase
 
         $expected = '';
 
-        foreach (new \GlobIterator(__DIR__ . '/../etc/[^_]*') as $file)
+        foreach (new \GlobIterator(__DIR__ . '/../etc/*.txt') as $file)
         {
-            $expected .= $file->getBasename() . PHP_EOL;
+            $expected .= $file->getBasename('.txt') . PHP_EOL;
         }
 
         $this->expectOutputString($expected);
@@ -34,7 +34,7 @@ class TrainerTest extends \PHPUnit_Framework_TestCase
 
     public function testFilesAreReadable()
     {
-        foreach (new \GlobIterator(__DIR__ . '/../etc/[^_]*') as $file)
+        foreach (new \GlobIterator(__DIR__ . '/../etc/*') as $file)
         {
             $this->assertIsReadable($file->getPathname());
         }
@@ -42,7 +42,10 @@ class TrainerTest extends \PHPUnit_Framework_TestCase
 
     public function testFileIsWriteable()
     {
-        $this->assertIsWritable(__DIR__ . '/../etc/_langs.json');
+        foreach (new \GlobIterator(__DIR__ . '/../etc/*.json') as $file)
+        {
+            $this->assertIsWritable($file->getPathname());
+        }
     }
 
     /**
