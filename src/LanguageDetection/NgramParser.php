@@ -94,7 +94,7 @@ abstract class NgramParser
         {
             $l = mb_strlen($word);
 
-            for ($i = $this->minLength; $i <= $this->maxLength; $i++)
+            for ($i = $this->minLength; $i <= $this->maxLength; ++$i)
             {
                 for ($j = 0; ($i + $j - 1) < $l; ++$j, ++$tmp)
                 {
@@ -109,7 +109,7 @@ abstract class NgramParser
 
             foreach ($token as $j => $value)
             {
-                $tmp = $value / $sum;
+                $tokens[$i][$j] = $value / $sum;
             }
         }
 
