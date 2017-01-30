@@ -246,111 +246,58 @@ NULL
 ## Supported languages
 If your language not supported, feel free to add your own language files.
 
-| Language Code | Language |
-| :---: | :---: |
-| ab | Abkhaz |
-| af | Afrikaans |
-| am | Amharic |
-| ar | Arabic |
-| ay | Aymara |
-| az-Cyrl | Azerbaijani, North (Cyrillic) |
-| az-Latn | Azerbaijani, North (Latin) |
-| be | Belarusan |
-| bg | Bulgarian |
-| bi | Bislama |
-| bn | Bengali |
-| bo | Tibetan |
-| br | Breton |
-| bs-Cyrl | Bosnian (Cyrillic) |
-| bs-Latn | Bosnian (Latin) |
-| ca | Catalan |
-| ch | Chamorro |
-| co | Corsican |
-| cr | Cree |
-| cs | Czech |
-| cy | Welsh |
-| de | German |
-| dk | Danish |
-| dz | Dzongkha |
-| el-monoton | Greek (monotonic) |
-| el-polyton | Greek (polytonic) |
-| en | English |
-| eo | Esperanto |
-| es | Spanish |
-| et | Estonian |
-| eu | Basque |
-| fa | Persian |
-| fi | Finnish |
-| fj | Fijian |
-| fo | Faroese |
-| fr | French |
-| fy | Frisian |
-| ga | Gaelic, Irish |
-| gd | Gaelic, Scottish |
-| gl | Galician |
-| gn | Guarani |
-| gu | Gujarati |
-| ha | Hausa |
-| he | Hebrew |
-| hi | Hindi |
-| hr | Croatian |
-| hu | Hungarian |
-| hy | Armenian |
-| ia | Interlingua |
-| id | Indonesian |
-| ig | Igbo |
-| io | Ido |
-| is | Icelandic |
-| it | Italian |
-| iu | Inuktitut |
-| jp | Japanese |
-| jv | Javanese |
-| ka | Georgian |
-| km | Khmer |
-| ko | Korean |
-| kr | Kanuri |
-| ku | Kurdish |
-| la | Latin |
-| lg | Ganda |
-| lo | Lao |
-| lt | Lithuanian |
-| lv | Latvian |
-| mh | Marshallese |
-| mn-Cyrl | Mongolian, Halh (Cyrillic) |
-| ms-Arab | Malay (Arabic) |
-| ms-Latn | Malay (Latin) |
-| mt | Maltese |
-| nb | Norwegian, Nynorsk |
-| ng | Ndonga |
-| nl | Dutch |
-| nn | Norwegian, Bokmål |
-| nv | Navajo |
-| pl | Polish |
-| pt-BR | Portuguese (Brazil) |
-| pt-PT | Portuguese (Portugal) |
-| ro | Romanian |
-| ru | Russian |
-| sk | Slovak |
-| sl | Slovene |
-| so | Somali |
-| sq | Albanian |
-| ss | Swati |
-| sv | Swedish |
-| ta | Tamil |
-| th | Thai |
-| tl | Tagalog |
-| tr | Turkish |
-| tt | Tatar |
-| ty | Tahitian |
-| ug-Arab | Uyghur (Arabic) |
-| ug-Latn | Uyghur (Latin) |
-| uk | Ukrainian |
-| uz | Uzbek |
-| ve | Venda |
-| vi | Vietnamese |
-| wa | Walloon |
-| wo | Wolof |
-| xh | Xhosa |
-| yo | Yoruba |
-| zh-Hans | Chinese, Mandarin (Simplified) |
-| zh-Hant | Chinese, Mandarin (Traditional) |
+| Language | Language Code | Language | Language Code |
+| :--- | :--- | :--- | :--- |
+| Abkhaz | ab | Italian | it |
+| Afrikaans | af | Inuktitut | iu |
+| Amharic | am | Japanese | jp |
+| Arabic | ar | Javanese | jv |
+| Aymara | ay | Georgian | ka |
+| Azerbaijani, North (Cyrillic) | az-Cyrl | Khmer | km |
+| Azerbaijani, North (Latin) | az-Latn | Korean | ko |
+| Belarusan | be | Kanuri | kr |
+| Bulgarian | bg | Kurdish | ku |
+| Bislama | bi | Latin | la |
+| Bengali | bn | Ganda | lg |
+| Tibetan | bo | Lao | lo |
+| Breton | br | Lithuanian | lt |
+| Bosnian (Cyrillic) | bs-Cyrl | Latvian | lv |
+| Bosnian (Latin) | bs-Latn | Marshallese | mh |
+| Catalan | ca | Mongolian, Halh (Cyrillic) | mn-Cyrl |
+| Chamorro | ch | Malay (Arabic) | ms-Arab |
+| Corsican | co | Malay (Latin) | ms-Latn |
+| Cree | cr | Maltese | mt |
+| Czech | cs | Norwegian, Nynorsk | nb |
+| Welsh | cy | Ndonga | ng |
+| German | de | Dutch | nl |
+| Danish | dk | Norwegian, Bokmål | nn |
+| Dzongkha | dz | Navajo | nv |
+| Greek (monotonic) | el-monoton | Polish | pl |
+| Greek (polytonic) | el-polyton | Portuguese (Brazil) | pt-BR |
+| English | en | Portuguese (Portugal) | pt-PT |
+| Esperanto | eo | Romanian | ro |
+| Spanish | es | Russian | ru |
+| Estonian | et | Slovak | sk |
+| Basque | eu | Slovene | sl |
+| Persian | fa | Somali | so |
+| Finnish | fi | Albanian | sq |
+| Fijian | fj | Swati | ss |
+| Faroese | fo | Swedish | sv |
+| French | fr | Tamil | ta |
+| Frisian | fy | Thai | th |
+| Gaelic, Irish | ga | Tagalog | tl |
+| Gaelic, Scottish | gd | Turkish | tr |
+| Galician | gl | Tatar | tt |
+| Guarani | gn | Tahitian | ty |
+| Gujarati | gu | Uyghur (Arabic) | ug-Arab |
+| Hausa | ha | Uyghur (Latin) | ug-Latn |
+| Hebrew | he | Ukrainian | uk |
+| Hindi | hi | Uzbek | uz |
+| Croatian | hr | Venda | ve |
+| Hungarian | hu | Vietnamese | vi |
+| Armenian | hy | Walloon | wa |
+| Interlingua | ia | Wolof | wo |
+| Indonesian | id | Xhosa | xh |
+| Igbo | ig | Yoruba | yo |
+| Ido | io | Chinese, Mandarin (Simplified) | zh-Hans |
+| Icelandic | is | Chinese, Mandarin (Traditional) | zh-Hant |
